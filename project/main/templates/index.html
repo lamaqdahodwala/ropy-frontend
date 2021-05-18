@@ -2,11 +2,23 @@
 
 {% block content %} 
 
-{% load static %} 
-<script src="{% static 'main.js'%}"></script>
+<br><br>
 <div class="container">
     <h1 class="title">
-        hello world
+        ROBLOX account Data
     </h1>
+    <form action="/username" method="post">
+        {% csrf_token %}
+        <div class="control">
+            <input class="input is-rounded" type="text" placeholder=""/>
+            <p class="help">Your roblox username</p>
+        </div>
+        <hr>
+        <div class="is-flex is-justify-content-center">
+            <div class="control">    
+                <button type="submit" class='button is-primary is-rounded'>Search</button>
+            </div>
+        </div>
+    </form>
 </div>
 {% endblock %} 
